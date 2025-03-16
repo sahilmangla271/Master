@@ -1,0 +1,14 @@
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\bin\Debug\net8.0\Inventory.Management.Infrastructure.deps.json
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\bin\Debug\net8.0\Inventory.Management.Infrastructure.runtimeconfig.json
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\bin\Debug\net8.0\Inventory.Management.Infrastructure.dll
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\bin\Debug\net8.0\Inventory.Management.Infrastructure.pdb
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\obj\Debug\net8.0\Inventory.Management.Infrastructure.csproj.AssemblyReference.cache
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\obj\Debug\net8.0\Inventory.Management.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\obj\Debug\net8.0\Inventory.Management.Infrastructure.AssemblyInfoInputs.cache
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\obj\Debug\net8.0\Inventory.Management.Infrastructure.AssemblyInfo.cs
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\obj\Debug\net8.0\Inventory.Management.Infrastructure.csproj.CoreCompileInputs.cache
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\obj\Debug\net8.0\Inventory.Management.Infrastructure.dll
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\obj\Debug\net8.0\refint\Inventory.Management.Infrastructure.dll
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\obj\Debug\net8.0\Inventory.Management.Infrastructure.pdb
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\obj\Debug\net8.0\Inventory.Management.Infrastructure.genruntimeconfig.cache
+E:\KT and Work\DSA\InventoryManagement\Inventory.Management.lib\obj\Debug\net8.0\ref\Inventory.Management.Infrastructure.dll
