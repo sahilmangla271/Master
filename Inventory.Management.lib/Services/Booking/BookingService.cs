@@ -24,7 +24,7 @@ namespace Inventory.Management.Infrastructure.Services.Booking
 
         public async Task<BookingResponse> BookItemAsync(int memberId, int inventoryId)
         {
-            using var transaction = await dbContext.Database.BeginTransactionAsync();
+            await using var transaction = await dbContext.Database.BeginTransactionAsync();
 
             try
             {

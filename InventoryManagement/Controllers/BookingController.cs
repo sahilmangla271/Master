@@ -8,15 +8,8 @@ namespace Inventory.Management.API.Controllers
     [ApiController]
     public class BookingController : ControllerBase
     {
-        private readonly IBookingService _bookingService;
-
-        public BookingController(IBookingService bookingService)
-        {
-            _bookingService = bookingService;
-        }
-
         [HttpPost("book")]
-        public async Task<ActionResult<BookingResponse>> Book([FromBody] BookingRequest request)
+        public async Task<ActionResult<BookingResponse>> Book([FromBody] BookingRequest request, [FromServices] IBookingService _bookingService)
         {
             try
             {
@@ -39,7 +32,7 @@ namespace Inventory.Management.API.Controllers
         }
 
         [HttpDelete("cancel/{bookingId}")]
-        public async Task<ActionResult<BookingResponse>> Cancel(int bookingId)
+        public async Task<ActionResult<BookingResponse>> Cancel(int bookingId, [FromServices] IBookingService _bookingService)
         {
             try
             {

@@ -10,15 +10,9 @@ namespace Inventory.Management.API.Controllers
     [ApiController]
     public class CsvUploadController : ControllerBase
     {
-        private readonly IUploadService uploadService;
-
-        public CsvUploadController(IUploadService memberService)
-        {
-            this.uploadService = memberService;
-        }
 
         [HttpPost("uploadmembers")]
-        public async Task<ActionResult<UploadResponse>> UploadMembers(IFormFile file)
+        public async Task<ActionResult<UploadResponse>> UploadMembers(IFormFile file, [FromServices] IUploadService uploadService)
         {
             try
             {
@@ -49,7 +43,7 @@ namespace Inventory.Management.API.Controllers
         }
 
         [HttpPost("uploadinventory")]
-        public async Task<IActionResult> UploadInventory(IFormFile file)
+        public async Task<IActionResult> UploadInventory(IFormFile file, [FromServices] IUploadService uploadService)
         {
             try
             {

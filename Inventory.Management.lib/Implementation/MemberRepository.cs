@@ -1,34 +1,31 @@
-﻿using Inventory.Management.Infrastructure.Data.EF;
+﻿using Inventory.Management.Infrastructure.Data;
 using Inventory.Management.Infrastructure.Data.EF.Model;
 using Inventory.Management.Infrastructure.Interface;
-using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Management.Infrastructure.Implementation
 {
     public class MemberRepository : IMemberRepository
     {
-        private readonly InventoryDBContext _context;
+        private readonly IRepository<Data.EF.Model.Member> _repository;
 
-        public MemberRepository(InventoryDBContext context)
+        public MemberRepository(IRepository<Data.EF.Model.Member> repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         public async Task AddMembersAsync(List<Member> members)
         {
-            await _context.Members.AddRangeAsync(members);
-            await _context.SaveChangesAsync();
+            await _repository.AddRangeAsync(members);
         }
 
         public async Task<Member?> GetMemberByIdAsync(int id)
         {
-            return await _context.Members.FirstOrDefaultAsync(m => m.Id == id);
+            return await _repository.GetByIdAsync(id);
         }
 
         public async Task UpdateMemberAsync(Member member)
         {
-            _context.Members.Update(member);
-            await _context.SaveChangesAsync();
+            await _repository.UpdateAsync(member);
         }
     }
 

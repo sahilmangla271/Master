@@ -1,37 +1,32 @@
-﻿using Inventory.Management.Infrastructure.Data.EF;
+﻿using Inventory.Management.Infrastructure.Data;
 using Inventory.Management.Infrastructure.Data.EF.Model;
 using Inventory.Management.Infrastructure.Interface;
-using Microsoft.EntityFrameworkCore;
 
 namespace Inventory.Management.Infrastructure.Implementation
 {
     public class BookingRepository : IBookingRepository
     {
-        private readonly InventoryDBContext _context;
+        private readonly IRepository<Booking> _repository;
 
-        public BookingRepository(InventoryDBContext context)
+        public BookingRepository(IRepository<Booking> repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         public async Task AddBookingAsync(Booking booking)
         {
-            _context.Bookings.Add(booking);
-            await _context.SaveChangesAsync();
+            await _repository.AddAsync(booking);
         }
 
         public async Task<Booking?> GetBookingByIdAsync(int id)
         {
-            return await _context.Bookings
-                .Include(b => b.Member)
-                .Include(b => b.Inventory)
-                .FirstOrDefaultAsync(b => b.Id == id);
+            return await _repository.GetAllByIdAsync(id, b => b.Member, b => b.Inventory);
         }
 
         public async Task RemoveBookingAsync(Booking booking)
         {
-            _context.Bookings.Remove(booking);
-            await _context.SaveChangesAsync();
+            await _repository.RemoveAsync(booking);
+
         }
     }
 }
